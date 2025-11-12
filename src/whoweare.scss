@@ -1,4 +1,6 @@
-
+// =====================
+// Variables
+// =====================
 $primary-color: #2a5b80;
 $accent-color: #16135e;
 $text-color: #000;
@@ -10,6 +12,9 @@ $font-logo: 'Open Sans', sans-serif;
 
 $spacing-unit: 8px;
 
+// =====================
+// Mixins & Extends
+// =====================
 %flex-center {
   display: flex;
   align-items: center;
@@ -28,6 +33,9 @@ $spacing-unit: 8px;
   }
 }
 
+// =====================
+// Global Styles
+// =====================
 * {
   margin: 0;
   padding: 0;
@@ -41,6 +49,9 @@ body {
   line-height: 1.5;
 }
 
+// =====================
+// Header
+// =====================
 header {
   background-color: $bg-color;
   border-top: 3px solid $accent-color;
@@ -64,28 +75,132 @@ header {
       padding: $spacing-unit * 2;
     }
   }
-  
-  .stats {
+
+  .logo {
+    font-family: $font-logo;
+    font-weight: 700;
+    font-size: 32px;
+    color: $text-color;
+
+    @include responsive(mobile) {
+      font-size: 26px;
+    }
+  }
+
+  nav {
+    ul.nav-list {
+      @extend %flex-center;
+      list-style: none;
+      gap: $spacing-unit * 2.5;
+
+      li a {
+        font-family: $font-main;
+        font-size: 19px;
+        font-weight: 700;
+        text-decoration: none;
+        color: $primary-color;
+        position: relative;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+
+        &.active {
+          color: $accent-color;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $accent-color;
+          }
+        }
+      }
+
+      @include responsive(tablet) {
+        gap: $spacing-unit * 1.5;
+      }
+
+      @include responsive(mobile) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .search-bar {
+    @extend %flex-center;
+    border: 1px solid $muted-color;
+    border-radius: 4px;
+    padding: $spacing-unit * 0.5 $spacing-unit;
+
+    input {
+      border: none;
+      outline: none;
+      padding: $spacing-unit;
+      font-size: 19px;
+      color: $muted-color;
+      font-family: $font-main;
+      width: 150px;
+
+      @include responsive(mobile) {
+        width: 120px;
+        font-size: 16px;
+      }
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+// =====================
+// Hero Section
+// =====================
+.hero {
+  width: 100%;
+  height: 387px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+// =====================
+// Stats Section
+// =====================
+.stats {
   background-color: $bg-color;
   padding: $spacing-unit * 6 0;
   border-bottom: 1px solid lighten($muted-color, 30%);
 
   .stats-container {
-    @extend %flex-center;
-    justify-content: space-around;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
     flex-wrap: wrap;
-    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    max-width: 1000px;
 
     .stat {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-      &.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      flex: 1 1 200px;
+      min-width: 150px;
 
       h3 {
         font-family: $font-main;
@@ -128,6 +243,7 @@ header {
       font-weight: 700;
       color: $text-color;
       margin-bottom: $spacing-unit * 4;
+      text-align: center;
     }
 
     p {
@@ -136,6 +252,7 @@ header {
       color: $text-color;
       line-height: 1.7;
       margin-bottom: $spacing-unit * 3;
+      text-align: center;
     }
   }
 }
@@ -193,106 +310,3 @@ header {
     }
   }
 }
-
-  .logo {
-    font-family: $font-logo;
-    font-weight: 700;
-    font-size: 32px;
-    color: $text-color;
-
-    @include responsive(mobile) {
-      font-size: 26px;
-    }
-  }
-
-  nav {
-    ul.nav-list {
-      @extend %flex-center;
-      list-style: none;
-      gap: $spacing-unit * 2.5;
-
-      li a {
-        font-family: $font-main;
-        font-size: 19px;
-        font-weight: 700;
-        text-decoration: none;
-        color: $primary-color;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: darken($primary-color, 10%);
-        }
-          &.active {
-    position: relative;
-    color: $accent-color;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: $accent-color;
-    }
-  }
-
-      }
-
-      @include responsive(tablet) {
-        gap: $spacing-unit * 1.5;
-      }
-
-      @include responsive(mobile) {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-    }
-  }
-
-  .search-bar {
-    @extend %flex-center;
-    border: 1px solid $muted-color;
-    border-radius: 4px;
-    padding: $spacing-unit * 0.5 $spacing-unit;
-
-    input {
-      border: none;
-      outline: none;
-      padding: $spacing-unit;
-      font-size: 19px;
-      color: $muted-color;
-      font-family: $font-main;
-      width: 150px;
-
-      @include responsive(mobile) {
-        width: 120px;
-        font-size: 16px;
-      }
-    }
-
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-  }
-}
-
-.hero {
-  width: 100%;
-  height: 387px;       // keep the nice fixed height you like
-  overflow: hidden;    // hides overflow
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       // fills the box, keeps proportions
-  object-position: center; // focuses on the middle of the image
-  display: block;
-}
-
-

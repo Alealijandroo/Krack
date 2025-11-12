@@ -64,6 +64,135 @@ header {
       padding: $spacing-unit * 2;
     }
   }
+  
+  .stats {
+  background-color: $bg-color;
+  padding: $spacing-unit * 6 0;
+  border-bottom: 1px solid lighten($muted-color, 30%);
+
+  .stats-container {
+    @extend %flex-center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+    .stat {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h3 {
+        font-family: $font-main;
+        font-size: 25px;
+        font-weight: 700;
+        color: $text-color;
+      }
+
+      p {
+        font-family: $font-main;
+        font-size: 18px;
+        color: $text-color;
+      }
+    }
+  }
+
+  @include responsive(mobile) {
+    .stats-container {
+      flex-direction: column;
+      gap: $spacing-unit * 2;
+    }
+  }
+}
+
+// =====================
+// Story Section
+// =====================
+.story {
+  background-color: $bg-color;
+  padding: $spacing-unit * 10 0;
+
+  .story-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-unit * 6;
+
+    h2 {
+      font-family: $font-main;
+      font-size: 25px;
+      font-weight: 700;
+      color: $text-color;
+      margin-bottom: $spacing-unit * 4;
+    }
+
+    p {
+      font-family: $font-logo;
+      font-size: 16px;
+      color: $text-color;
+      line-height: 1.7;
+      margin-bottom: $spacing-unit * 3;
+    }
+  }
+}
+
+// =====================
+// Team Section
+// =====================
+.team {
+  background-color: $bg-color;
+  padding: $spacing-unit * 10 0;
+
+  h2 {
+    text-align: center;
+    font-family: $font-main;
+    font-size: 25px;
+    margin-bottom: $spacing-unit * 5;
+  }
+
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-unit * 4;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .team-member {
+      text-align: center;
+      width: 220px;
+
+      img {
+        width: 100%;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      h3 {
+        font-family: $font-main;
+        font-size: 19px;
+        margin-top: $spacing-unit * 2;
+      }
+
+      p {
+        font-family: $font-logo;
+        font-size: 14px;
+        color: $text-color;
+      }
+    }
+  }
+
+  @include responsive(mobile) {
+    .team-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
 
   .logo {
     font-family: $font-logo;

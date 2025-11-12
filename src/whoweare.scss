@@ -267,10 +267,16 @@ header {
 }
 
 .hero {
+  width: 100%;          // full width
+  overflow: hidden;     // hide any minor overflow if needed
+
   img {
-    width: 100%;
-    height: auto;
     display: block;
-    object-fit: cover;
+    max-width: 100%;    // responsive width
+    max-height: 80vh;   // optional: prevents image from taking full screen height
+    margin: 0 auto;     // center horizontally
+    object-fit: contain; // scale image so the whole image fits without cropping
+    object-position: center; // center the image vertically and horizontally
   }
 }
+

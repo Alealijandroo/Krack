@@ -222,6 +222,21 @@ header {
         &:hover {
           color: darken($primary-color, 10%);
         }
+          &.active {
+    position: relative;
+    color: $accent-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $accent-color;
+    }
+  }
+
       }
 
       @include responsive(tablet) {
@@ -267,16 +282,17 @@ header {
 }
 
 .hero {
-  width: 100%;          // full width
-  overflow: hidden;     // hide any minor overflow if needed
-
-  img {
-    display: block;
-    max-width: 100%;    // responsive width
-    max-height: 80vh;   // optional: prevents image from taking full screen height
-    margin: 0 auto;     // center horizontally
-    object-fit: contain; // scale image so the whole image fits without cropping
-    object-position: center; // center the image vertically and horizontally
-  }
+  width: 100%;
+  height: 387px;       // keep the nice fixed height you like
+  overflow: hidden;    // hides overflow
 }
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       // fills the box, keeps proportions
+  object-position: center; // focuses on the middle of the image
+  display: block;
+}
+
 

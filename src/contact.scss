@@ -34,3 +34,19 @@ main {
   height: 287px;
   align-self: stretch;
 }
+
+.h2 {
+  width: 1233px;
+  height: 30px;
+  position: absolute;
+  right: 101px;
+  top: 50px;
+  color: var(--Black-colour, #000);
+
+  /* Heading 2 */
+  font-family: "Playfair Display";
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

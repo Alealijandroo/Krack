@@ -1,0 +1,312 @@
+// =====================
+// Variables
+// =====================
+$primary-color: #2a5b80;
+$accent-color: #16135e;
+$text-color: #000;
+$muted-color: #999;
+$bg-color: #fff;
+
+$font-main: 'Playfair Display', serif;
+$font-logo: 'Open Sans', sans-serif;
+
+$spacing-unit: 8px;
+
+// =====================
+// Mixins & Extends
+// =====================
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin responsive($break) {
+  @if $break == tablet {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $break == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+// =====================
+// Global Styles
+// =====================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  color: $text-color;
+  background-color: $bg-color;
+  line-height: 1.5;
+}
+
+// =====================
+// Header
+// =====================
+header {
+  background-color: $bg-color;
+  border-top: 3px solid $accent-color;
+  width: 100%;
+
+  .header-container {
+    @extend %flex-center;
+    justify-content: space-between;
+    padding: $spacing-unit * 3 $spacing-unit * 6;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @include responsive(tablet) {
+      flex-wrap: wrap;
+      gap: $spacing-unit * 2;
+    }
+
+    @include responsive(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: $spacing-unit * 2;
+    }
+  }
+
+  .logo {
+    font-family: $font-logo;
+    font-weight: 700;
+    font-size: 32px;
+    color: $text-color;
+
+    @include responsive(mobile) {
+      font-size: 26px;
+    }
+  }
+
+  nav {
+    ul.nav-list {
+      @extend %flex-center;
+      list-style: none;
+      gap: $spacing-unit * 2.5;
+
+      li a {
+        font-family: $font-main;
+        font-size: 19px;
+        font-weight: 700;
+        text-decoration: none;
+        color: $primary-color;
+        position: relative;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+
+        &.active {
+          color: $accent-color;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $accent-color;
+          }
+        }
+      }
+
+      @include responsive(tablet) {
+        gap: $spacing-unit * 1.5;
+      }
+
+      @include responsive(mobile) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .search-bar {
+    @extend %flex-center;
+    border: 1px solid $muted-color;
+    border-radius: 4px;
+    padding: $spacing-unit * 0.5 $spacing-unit;
+
+    input {
+      border: none;
+      outline: none;
+      padding: $spacing-unit;
+      font-size: 19px;
+      color: $muted-color;
+      font-family: $font-main;
+      width: 150px;
+
+      @include responsive(mobile) {
+        width: 120px;
+        font-size: 16px;
+      }
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+// =====================
+// Hero Section
+// =====================
+.hero {
+  width: 100%;
+  height: 387px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+// =====================
+// Stats Section
+// =====================
+.stats {
+  background-color: $bg-color;
+  padding: $spacing-unit * 6 0;
+  border-bottom: 1px solid lighten($muted-color, 30%);
+
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1000px;
+
+    .stat {
+      flex: 1 1 200px;
+      min-width: 150px;
+
+      h3 {
+        font-family: $font-main;
+        font-size: 25px;
+        font-weight: 700;
+        color: $text-color;
+      }
+
+      p {
+        font-family: $font-main;
+        font-size: 18px;
+        color: $text-color;
+      }
+    }
+  }
+
+  @include responsive(mobile) {
+    .stats-container {
+      flex-direction: column;
+      gap: $spacing-unit * 2;
+    }
+  }
+}
+
+// =====================
+// Story Section
+// =====================
+.story {
+  background-color: $bg-color;
+  padding: $spacing-unit * 10 0;
+
+  .story-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-unit * 6;
+
+    h2 {
+      font-family: $font-main;
+      font-size: 25px;
+      font-weight: 700;
+      color: $text-color;
+      margin-bottom: $spacing-unit * 4;
+      text-align: center;
+    }
+
+    p {
+      font-family: $font-logo;
+      font-size: 16px;
+      color: $text-color;
+      line-height: 1.7;
+      margin-bottom: $spacing-unit * 3;
+      text-align: center;
+    }
+  }
+}
+
+// =====================
+// Team Section
+// =====================
+.team {
+  background-color: $bg-color;
+  padding: $spacing-unit * 10 0;
+
+  h2 {
+    text-align: center;
+    font-family: $font-main;
+    font-size: 25px;
+    margin-bottom: $spacing-unit * 5;
+  }
+
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-unit * 4;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .team-member {
+      text-align: center;
+      width: 220px;
+
+      img {
+        width: 100%;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      h3 {
+        font-family: $font-main;
+        font-size: 19px;
+        margin-top: $spacing-unit * 2;
+      }
+
+      p {
+        font-family: $font-logo;
+        font-size: 14px;
+        color: $text-color;
+      }
+    }
+  }
+
+  @include responsive(mobile) {
+    .team-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

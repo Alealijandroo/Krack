@@ -1,3 +1,148 @@
+/*! HEADER STYLES */
+
+#header {
+  width: 110%;
+  height: 130px;
+  overflow: hidden;
+  background: white;
+  display: block;
+  margin-left: -5%;
+  padding-top: 10px;
+
+  /*Breakpoint for when menu can't fit the screen anymore*/
+  @media screen and (max-width: 1190px) {
+    padding: 2%;
+    box-sizing: border-box;
+    height: auto;
+    position: relative;
+  }
+
+  /*#header h1*/
+  h1 {
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0 5%;
+    @include size(35, 40);
+    margin-bottom: 5px;
+  }
+
+  nav#menu {
+    display: block;
+    width: 90%;
+    border-bottom: 1px solid $light-grey;
+    border-top: 1px solid $light-grey;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    /*Breakpoint for when menu can't fit the screen anymore*/
+    @media screen and (max-width: 1190px) {
+      min-width: auto;
+      max-height: 0px;
+      @include transition(1s); /*Taken fomr mixin.scss*/
+
+      li {
+        display: none !important;
+      }
+
+      /*Open menu*/
+      &.responsive {
+        width: 100%;
+        max-height: 1000px;
+        @include transition(1s); /*Taken fomr mixin.scss*/
+
+        li {
+          &:not(:last-child) {
+            float: none;
+            display: block !important;
+            text-align: left;
+            padding: 1% 0;
+            border-top: 1px solid $light-grey;
+            margin: 0;
+            margin-left: -5%;
+            padding-left: 5%;
+          }
+
+          &:first-child {
+            border-top: 0;
+          }
+
+          a.current {
+            padding-bottom: 6px;
+          }
+        }
+      }
+    } /*Close @media screen and (max-width: 1190px)*/
+
+    ul {
+      display: block;
+
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: bold;
+        margin: 0 1%;
+        font-family: $primary-font;
+        @include size(20, 25);
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        a.current {
+          color: $link-hover;
+          border-bottom: 3px solid $link-hover;
+          padding-bottom: 16px;
+        }
+
+        &.icon {
+          display: none;
+        }
+
+        &.search input#searchInput {
+          background-image: url("../searchicon.png");
+          background-position: 7px 10px;
+          background-repeat: no-repeat;
+          width: 160px;
+          background-size: 15px auto;
+          box-sizing: border-box;
+          padding: 5px 5px 5px 30px;
+          border: 1px solid $light-grey;
+          margin: 12px 0;
+          box-shadow: 0 0 0 transparent;
+          font-family: $primary-font;
+          @include size(20, 25);
+
+          &:focus {
+            box-shadow: 0 0 5px $link;
+            @include transition(0.3s);
+          }
+        }
+
+        /*Breakpoint for when menu can't fit the screen anymore*/
+        @media screen and (max-width: 1190px) {
+          &.icon {
+            display: inline-block !important;
+            position: absolute;
+            right: 5%;
+            top: 30px;
+
+            a {
+              font-size: 20px;
+            }
+          }
+        } /*@media screen and (max-width: 1190px)*/
+
+        // Smartphones
+        @media (max-width: 870px) {
+          &.icon {
+            top: 15px;
+          }
+        }
+      } /*Close li*/
+    } /*Close ul*/
+  } /*Close nav#menu*/
+} /*Close #header*/
+
 .building-img {
   width: 100%;
   height: 100vh;
@@ -11,11 +156,26 @@
   }
 }
 
+.h1 {
+  width: 1233px;
+  height: 30px;
+  padding-left: 235px;
+
+  text-align: left;
+
+  color: var(--Black-colour, #000);
+  font-family: "Playfair Display";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .contact-map {
   display: flex;
   padding: 67px 107px 50px 107px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   align-self: stretch;
 }
 
@@ -29,14 +189,57 @@
 .text-boxes {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 68px;
   padding: 67px 107px 50px 107px;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   align-self: stretch;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .map {
   height: 287px;
-  align-self: stretch;
+  width: 70vw;
+}
+
+.h2 {
+  width: 1233px;
+  height: 30px;
+  position: absolute;
+  right: 101px;
+  top: 50px;
+  color: var(--Black-colour, #000);
+
+  /* Heading 2 */
+  font-family: "Playfair Display";
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.Contact {
+  display: grid;
+  width: 1439px;
+  padding: 100px 107px 50px 107px;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 35px;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 250px;
 }

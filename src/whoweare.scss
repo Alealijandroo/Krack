@@ -266,23 +266,22 @@ header {
 // =====================
 // Story Section
 // =====================
-
-  .story {
+.story {
   background-color: $bg-color;
-  padding: 107px 20px;
+  padding: $spacing-unit * 12 0;
 
   .story-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    text-align: left; // ✅ forces left alignment
+    padding: 0 $spacing-unit * 6;
 
     h2 {
       font-family: $font-main;
       font-size: 25px;
       font-weight: 700;
-      margin-bottom: 20px;
-      text-align: left; // ✅ ensures heading is also left-aligned
+      color: $text-color;
+      margin-bottom: $spacing-unit * 4;
+      text-align: left;
     }
 
     p {
@@ -291,7 +290,7 @@ header {
       line-height: 1.7;
       color: $text-color;
       margin-bottom: 20px;
-      text-align: left; // ✅ ensures body text is left-aligned
+      text-align: left; 
     }
   }
 }

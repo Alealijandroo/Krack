@@ -86,6 +86,7 @@ header {
       font-size: 26px;
     }
   }
+  
 
   nav {
     ul.nav-list {
@@ -185,8 +186,21 @@ header {
 // =====================
 .stats {
   background-color: $bg-color;
-  padding: $spacing-unit * 6 0;
-  border-bottom: 1px solid lighten($muted-color, 30%);
+  padding: 20px 107px; // ⬅️ 
+
+  .stats-row {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-unit * 8;
+    text-align: center;
+    border-bottom: 1px solid lighten($muted-color, 30%);
+    padding-bottom: 20px;
+  }
+}
+
 
   .stats-container {
     display: flex;
@@ -195,8 +209,25 @@ header {
     gap: 3rem;
     flex-wrap: wrap;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-unit * 8;
     text-align: center;
     max-width: 1000px;
+
+    @include responsive(tablet) {
+  .stats {
+    padding: 15px 80px;
+  }
+}
+
+@include responsive(mobile) {
+  .stats {
+    padding: 10px 60px;
+  }
+}
+
 
     .stat {
       flex: 1 1 200px;
@@ -212,25 +243,32 @@ header {
       p {
         font-family: $font-main;
         font-size: 18px;
+        font-weight: 400;
         color: $text-color;
       }
     }
   }
 
-  @include responsive(mobile) {
-    .stats-container {
-      flex-direction: column;
-      gap: $spacing-unit * 2;
+ @include responsive(mobile) {
+    .stats-row {
+      flex-direction: column; // stack vertically
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .stat {
+      text-align: center;
+      width: 100%;
     }
   }
-}
 
 // =====================
 // Story Section
 // =====================
 .story {
   background-color: $bg-color;
-  padding: $spacing-unit * 10 0;
+  padding: $spacing-unit * 12 0;
 
   .story-container {
     max-width: 1200px;
@@ -262,13 +300,13 @@ header {
 // =====================
 .team {
   background-color: $bg-color;
-  padding: $spacing-unit * 10 0;
+  padding: $spacing-unit * 12 0;
 
   h2 {
     text-align: center;
     font-family: $font-main;
     font-size: 25px;
-    margin-bottom: $spacing-unit * 5;
+    margin-bottom: $spacing-unit * 6;
   }
 
   .team-grid {

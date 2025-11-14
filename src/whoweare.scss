@@ -286,118 +286,103 @@ header {
         text-align: left;
       }
     }
+  }
+}
 
-    .Contact {
-      background-color: #fff;
-      padding: 100px 107px 50px 107px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+.Contact {
+  display: flex;
+  width: 1439px;
+  padding: 100px 107px 50px 107px;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 35px;
+  flex-wrap: wrap;
+  background: #ffffff;
 
-      // Section title
-      .h2 {
-        width: 1233px;
-        height: 30px;
-        position: absolute;
-        right: 101px;
-        top: 50px;
-        color: var(--Black-colour, #000);
-      }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 175px);
+    grid-auto-rows: 347px;
+    gap: 35px;
+    justify-content: center;
+    max-width: 1225px; // ✅ fits 6 × 175 + 5 × 35 perfectly
+    margin: 0 auto;
+  }
+  .h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 50px;
+    align-self: flex-start;
+  }
 
-      /* Heading 2 */
-      font-family: "Playfair Display";
-      font-size: 19px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-    }
+  // Card styling
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
 
-    // Grid container
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 175px);
-      grid-auto-rows: 290px;
-      gap: 35px 35px; // ✅ spacing between cards
-      justify-content: center;
-      align-items: start;
-      max-width: 1225px; // ✅ matches Figma layout width
-      margin: 35px auto;
-    }
-
-    // Team card
-    .team-member {
+    img {
       width: 175px;
       height: 290px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #000;
+      margin: 11px 0 3px 0; // 11px between image and text
+      line-height: 1.2;
+    }
+
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #000;
+      margin: 0;
+    }
+  }
+
+  // --- Responsive breakpoints ---
+  @media (max-width: 1200px) {
+    .team-grid {
+      grid-template-columns: repeat(4, 175px);
+      justify-content: center;
+      gap: 25px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .team-grid {
+      grid-template-columns: repeat(3, 175px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 30px;
+
+    .h2 {
       text-align: center;
-
-      img {
-        width: 175px;
-        height: 290px;
-        object-fit: cover;
-        border-radius: 4px;
-        margin-bottom: 11px; // ✅ 11px gap between image and text
-      }
-
-      h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 19px;
-        font-weight: 700;
-        color: #000;
-        margin: 0 0 5px 0;
-        line-height: 1.2;
-      }
-
-      p {
-        font-family: "Open Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        color: #000;
-        margin: 0;
-      }
+      align-self: center;
     }
 
-    // ✅ Responsive versions
-    @media (max-width: 1200px) {
-      .team-grid {
-        grid-template-columns: repeat(4, 175px);
-        justify-content: center;
-      }
+    .team-grid {
+      grid-template-columns: repeat(2, 175px);
+      justify-content: center;
+      gap: 25px;
     }
+  }
 
-    @media (max-width: 992px) {
-      .team-grid {
-        grid-template-columns: repeat(3, 175px);
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 768px) {
-      padding: 60px 30px;
-
-      h2.h2 {
-        text-align: center;
-        align-self: center;
-      }
-
-      .team-grid {
-        grid-template-columns: repeat(2, 175px);
-        justify-content: center;
-        gap: 25px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .team-grid {
-        grid-template-columns: 1fr;
-        justify-content: center;
-      }
-
-      .team-member {
-        width: 100%;
-      }
+  @media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      justify-content: center;
     }
   }
 }

@@ -7,8 +7,8 @@ $text-color: #000;
 $muted-color: #999;
 $bg-color: #fff;
 
-$font-main: 'Playfair Display', serif;
-$font-logo: 'Open Sans', sans-serif;
+$font-main: "Playfair Display", serif;
+$font-logo: "Open Sans", sans-serif;
 
 $spacing-unit: 8px;
 
@@ -86,7 +86,6 @@ header {
       font-size: 26px;
     }
   }
-  
 
   nav {
     ul.nav-list {
@@ -186,7 +185,7 @@ header {
 // =====================
 .stats {
   background-color: $bg-color;
-  padding: 20px 107px; // ⬅️ 
+  padding: 20px 107px; // ⬅️
 
   .stats-row {
     max-width: 1200px;
@@ -201,71 +200,66 @@ header {
   }
 }
 
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $spacing-unit * 8;
+  text-align: center;
+  max-width: 1000px;
 
-  .stats-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: $spacing-unit * 8;
-    text-align: center;
-    max-width: 1000px;
+  @include responsive(tablet) {
+    .stats {
+      padding: 15px 80px;
+    }
+  }
 
-    @include responsive(tablet) {
-  .stats {
-    padding: 15px 80px;
+  @include responsive(mobile) {
+    .stats {
+      padding: 10px 60px;
+    }
+  }
+
+  .stat {
+    flex: 1 1 200px;
+    min-width: 150px;
+
+    h3 {
+      font-family: $font-main;
+      font-size: 25px;
+      font-weight: 700;
+      color: $text-color;
+    }
+
+    p {
+      font-family: $font-main;
+      font-size: 18px;
+      font-weight: 400;
+      color: $text-color;
+    }
   }
 }
 
 @include responsive(mobile) {
-  .stats {
-    padding: 10px 60px;
+  .stats-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .stat {
+    text-align: center;
+    width: 100%;
   }
 }
 
-
-    .stat {
-      flex: 1 1 200px;
-      min-width: 150px;
-
-      h3 {
-        font-family: $font-main;
-        font-size: 25px;
-        font-weight: 700;
-        color: $text-color;
-      }
-
-      p {
-        font-family: $font-main;
-        font-size: 18px;
-        font-weight: 400;
-        color: $text-color;
-      }
-    }
-  }
-
- @include responsive(mobile) {
-    .stats-row {
-      flex-direction: column; // stack vertically
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .stat {
-      text-align: center;
-      width: 100%;
-    }
-  }
-
-// =====================
-// Story Section
-// =====================
 .story {
   background-color: $bg-color;
   padding: $spacing-unit * 12 0;
@@ -282,70 +276,128 @@ header {
       color: $text-color;
       margin-bottom: $spacing-unit * 4;
       text-align: left;
-    }
-
-    p {
-      font-family: $font-logo;
-      font-size: 16px;
-      line-height: 1.7;
-      color: $text-color;
-      margin-bottom: 20px;
-      text-align: left; 
-    }
-  }
-}
-
-
-// =====================
-// Team Section
-// =====================
-.team {
-  background-color: $bg-color;
-  padding: $spacing-unit * 12 0;
-
-  h2 {
-    text-align: center;
-    font-family: $font-main;
-    font-size: 25px;
-    margin-bottom: $spacing-unit * 6;
-  }
-
-  .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: $spacing-unit * 4;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    .team-member {
-      text-align: center;
-      width: 220px;
-
-      img {
-        width: 100%;
-        border-radius: 4px;
-        object-fit: cover;
-      }
-
-      h3 {
-        font-family: $font-main;
-        font-size: 19px;
-        margin-top: $spacing-unit * 2;
-      }
 
       p {
         font-family: $font-logo;
-        font-size: 14px;
+        font-size: 16px;
+        line-height: 1.7;
         color: $text-color;
+        margin-bottom: 20px;
+        text-align: left;
       }
     }
-  }
 
-  @include responsive(mobile) {
-    .team-grid {
+    .Contact {
+      background-color: #fff;
+      padding: 100px 107px 50px 107px;
+      display: flex;
       flex-direction: column;
       align-items: center;
+
+      // Section title
+      .h2 {
+        width: 1233px;
+        height: 30px;
+        position: absolute;
+        right: 101px;
+        top: 50px;
+        color: var(--Black-colour, #000);
+      }
+
+      /* Heading 2 */
+      font-family: "Playfair Display";
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    // Grid container
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 175px);
+      grid-auto-rows: 290px;
+      gap: 35px 35px; // ✅ spacing between cards
+      justify-content: center;
+      align-items: start;
+      max-width: 1225px; // ✅ matches Figma layout width
+      margin: 35px auto;
+    }
+
+    // Team card
+    .team-member {
+      width: 175px;
+      height: 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      img {
+        width: 175px;
+        height: 290px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 11px; // ✅ 11px gap between image and text
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 19px;
+        font-weight: 700;
+        color: #000;
+        margin: 0 0 5px 0;
+        line-height: 1.2;
+      }
+
+      p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+        margin: 0;
+      }
+    }
+
+    // ✅ Responsive versions
+    @media (max-width: 1200px) {
+      .team-grid {
+        grid-template-columns: repeat(4, 175px);
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 175px);
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 60px 30px;
+
+      h2.h2 {
+        text-align: center;
+        align-self: center;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 175px);
+        justify-content: center;
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        justify-content: center;
+      }
+
+      .team-member {
+        width: 100%;
+      }
     }
   }
 }

@@ -291,7 +291,8 @@ header {
 
 .Contact {
   display: flex;
-  width: 1439px;
+  width: 100%;
+  max-width: 1439px;
   padding: 100px 107px 50px 107px;
   align-items: flex-start;
   align-content: flex-start;
@@ -305,7 +306,7 @@ header {
     grid-auto-rows: 347px;
     gap: 35px;
     justify-content: center;
-    max-width: 1225px; // ✅ fits 6 × 175 + 5 × 35 perfectly
+    max-width: 1225px; 
     margin: 0 auto;
   }
   .h2 {
@@ -317,7 +318,7 @@ header {
     align-self: flex-start;
   }
 
-  // Card styling
+  
   .team-member {
     display: flex;
     flex-direction: column;
@@ -336,7 +337,7 @@ header {
       font-size: 19px;
       font-weight: 700;
       color: #000;
-      margin: 11px 0 3px 0; // 11px between image and text
+      margin: 11px 0 3px 0;
       line-height: 1.2;
     }
 

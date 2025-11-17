@@ -180,9 +180,6 @@ header {
   }
 }
 
-// =====================
-// Stats Section
-// =====================
 .stats {
   background-color: $bg-color;
   padding: 20px 107px; // ⬅️
@@ -300,15 +297,6 @@ header {
   flex-wrap: wrap;
   background: #ffffff;
 
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 175px);
-    grid-auto-rows: 347px;
-    gap: 35px;
-    justify-content: center;
-    max-width: 1225px; 
-    margin: 0 auto;
-  }
   .h2 {
     font-family: "Playfair Display", serif;
     font-size: 25px;
@@ -318,7 +306,6 @@ header {
     align-self: flex-start;
   }
 
-  
   .team-member {
     display: flex;
     flex-direction: column;

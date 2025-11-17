@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+@import "gridstyle";
+
+.building-img {
+  height: 387px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+>>>>>>> origin/main
 .building-img img {
   height: 100%;
   object-fit: cover;

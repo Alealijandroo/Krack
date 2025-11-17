@@ -1,17 +1,16 @@
-.building-img {
-  height: 387px;
-  overflow: hidden;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .building-img img {
   height: 100%;
-  width: auto;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
+}
+
+.building-img {
+  position: relative;
+  height: 387px;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
 }
 
 .h1 {

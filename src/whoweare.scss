@@ -337,6 +337,42 @@ header {
     }
   }
 
+    .site-footer {
+  width: 1440px;
+  height: 192px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 36px;
+
+  background: #fff;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Kolumnrubriker */
+.site-footer h2 {
+  font-family: "Playfair Display";
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Vanlig text */
+.site-footer p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+/* Högerjusterad copyright */
+.footer-copy {
+  margin-left: auto;
+  align-self: flex-start;
+  text-align: right;
+}
+
   // --- Responsive breakpoints ---
   @media (max-width: 1200px) {
     .team-grid {
@@ -374,40 +410,6 @@ header {
     }
   }
   }
-  .site-footer {
-  width: 1440px;
-  height: 192px;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 36px;
 
-  background: #fff;
-  color: #000;
-  font-family: "Open Sans", sans-serif;
-  box-sizing: border-box;
-}
-
-/* Kolumnrubriker */
-.site-footer h2 {
-  font-family: "Playfair Display";
-  font-size: 19px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-/* Vanlig text */
-.site-footer p {
-  margin: 3px 0;
-  font-size: 14px;
-}
-
-/* Högerjusterad copyright */
-.footer-copy {
-  margin-left: auto;
-  align-self: flex-start;
-  text-align: right;
-}
 
 

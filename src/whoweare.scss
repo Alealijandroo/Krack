@@ -53,17 +53,19 @@ body {
 // =====================
 // Header
 // =====================
-header {
+header.header {
   background-color: $bg-color;
   border-top: 3px solid $accent-color;
   width: 100%;
+  padding: 0;
 
   .header-container {
-    @extend %flex-center;
-    justify-content: space-between;
-    padding: $spacing-unit * 3 $spacing-unit * 6;
+    display: flex;
+    justify-content: space-between;  // logo left, nav right
+    align-items: center;
     max-width: 1440px;
     margin: 0 auto;
+    padding: 0 20px;
 
     @include responsive(tablet) {
       flex-wrap: wrap;
@@ -76,6 +78,56 @@ header {
       padding: $spacing-unit * 2;
     }
   }
+
+  h1 {
+    font-family: $font-logo;
+    font-weight: 700;
+    font-size: 32px;
+    color: $text-color;
+
+    @include responsive(mobile) {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+  }
+
+  nav.menu {
+    ul.nav-list {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      flex-wrap: wrap;        // important to keep all links visible
+      align-items: center;
+      margin: 0;
+      padding: 0;
+
+      li a {
+        font-family: $font-main;
+        font-size: 19px;
+        font-weight: 400;
+        color: $primary-color;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+
+        &.current {
+          color: $accent-color;
+        }
+      }
+
+      li.search input {
+        border: 1px solid $muted-color;
+        border-radius: 4px;
+        padding: 0.5rem;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
 
   .logo {
     font-family: $font-logo;
@@ -162,7 +214,7 @@ header {
       align-items: center;
     }
   }
-}
+
 
 // =====================
 // Hero Section

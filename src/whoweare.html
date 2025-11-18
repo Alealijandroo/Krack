@@ -4,61 +4,36 @@
     <meta charset="utf-8" />
     <title>Google News</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--Stylesheets-->
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Playfair+Display:400,700"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+
     <link rel="stylesheet" href="whoweare.scss" />
-    <link rel="stylesheet" href="team-members.scss" />
   </head>
   <body>
-    <script type="module" src="whoweare.js"></script>
+    <section role="main" id="wrapper">
+      <!--Header (matches your classmate)-->
+     <header id="header" class="header">
+  <h1>Google News</h1>
+  <nav id="menu" class="menu">
+    <ul>
+      <li><a href="/Offerings">What we do</a></li>
+      <li><a href="/About-us" class="current">Who we are</a></li>
+      <li><a href="/Customers">Customers</a></li>
+      <li><a href="/Careers">Career</a></li>
+      <li><a href="/Investor-relations">IR</a></li>
+      <li><a href="/Latest">Latest</a></li>
+      <li><a href="/src/Contact.html">Contact</a></li>
+      <li class="search">
+        <input type="text" placeholder="Search titles" title="Type in title search term" />
+      </li>
+    </ul>
+  </nav>
+</header>
 
-    <header>
-      <div class="top-border"></div>
 
-      <div class="header-container">
-        <h1 class="logo">Google News</h1>
-
-        <nav aria-label="Main Navigation">
-          <ul class="nav-list">
-            <li><a href="#">What we do</a></li>
-            <li><a href="#" class="active">Who we are</a></li>
-            <li><a href="#">Customers</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">IR</a></li>
-            <li><a href="#">Latest</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-
-        <form class="search-bar" role="search">
-          <input
-            type="search"
-            placeholder="Search articles"
-            aria-label="Search articles"
-          />
-          <button type="submit" aria-label="Search">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#999"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-        </form>
-      </div>
-    </header>
     <section class="hero">
       <img
         src="img/herowhoweare.jpg"

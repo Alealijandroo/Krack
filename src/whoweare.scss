@@ -1,3 +1,4 @@
+@import "team-members.scss";
 // =====================
 // Variables
 // =====================
@@ -232,9 +233,6 @@ header.header {
   }
 }
 
-// =====================
-// Stats Section
-// =====================
 .stats {
   background-color: $bg-color;
   padding: 20px 107px; // ⬅️
@@ -338,118 +336,41 @@ header.header {
         text-align: left;
       }
     }
-
-    .Contact {
-      background-color: #fff;
-      padding: 100px 107px 50px 107px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      // Section title
-      .h2 {
-        width: 1233px;
-        height: 30px;
-        position: absolute;
-        right: 101px;
-        top: 50px;
-        color: var(--Black-colour, #000);
-      }
-
-      /* Heading 2 */
-      font-family: "Playfair Display";
-      font-size: 19px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-    }
-
-    // Grid container
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 175px);
-      grid-auto-rows: 290px;
-      gap: 35px 35px; // ✅ spacing between cards
-      justify-content: center;
-      align-items: start;
-      max-width: 1225px; // ✅ matches Figma layout width
-      margin: 35px auto;
-    }
-
-    // Team card
-    .team-member {
-      width: 175px;
-      height: 290px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      img {
-        width: 175px;
-        height: 290px;
-        object-fit: cover;
-        border-radius: 4px;
-        margin-bottom: 11px; // ✅ 11px gap between image and text
-      }
-
-      h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 19px;
-        font-weight: 700;
-        color: #000;
-        margin: 0 0 5px 0;
-        line-height: 1.2;
-      }
-
-      p {
-        font-family: "Open Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        color: #000;
-        margin: 0;
-      }
-    }
-
-    // ✅ Responsive versions
-    @media (max-width: 1200px) {
-      .team-grid {
-        grid-template-columns: repeat(4, 175px);
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .team-grid {
-        grid-template-columns: repeat(3, 175px);
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 768px) {
-      padding: 60px 30px;
-
-      h2.h2 {
-        text-align: center;
-        align-self: center;
-      }
-
-      .team-grid {
-        grid-template-columns: repeat(2, 175px);
-        justify-content: center;
-        gap: 25px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .team-grid {
-        grid-template-columns: 1fr;
-        justify-content: center;
-      }
-
-      .team-member {
-        width: 100%;
-      }
-    }
   }
+}
+
+.site-footer {
+  width: 1440px;
+  height: 192px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 36px;
+
+  background: #fff;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Kolumnrubriker */
+.site-footer h2 {
+  font-family: "Playfair Display";
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Vanlig text */
+.site-footer p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+/* Högerjusterad copyright */
+.footer-copy {
+  margin-left: auto;
+  align-self: flex-start;
+  text-align: right;
 }

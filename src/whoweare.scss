@@ -53,7 +53,8 @@ body {
 // =====================
 // Header
 // =====================
-header.header {
+header {
+.header {
   background-color: $bg-color;
   border-top: 3px solid $accent-color;
   width: 100%;
@@ -78,7 +79,7 @@ header.header {
       padding: $spacing-unit * 2;
     }
   }
-
+}
   h1 {
     font-family: $font-logo;
     font-weight: 700;

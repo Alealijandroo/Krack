@@ -1,9 +1,9 @@
 .h2 {
+  padding: 20px 105px;
   font-family: "Playfair Display", serif;
   font-size: 25px;
   font-weight: 700;
   color: #000;
-  margin-bottom: 50px;
   align-self: flex-start;
 }
 
@@ -11,7 +11,7 @@
   display: flex;
   width: 100%;
   max-width: 1439px;
-  padding: 100px 107px 50px 107px;
+  padding: 0px 107px 50px 107px;
   align-items: flex-start;
   align-content: flex-start;
   gap: 35px;
